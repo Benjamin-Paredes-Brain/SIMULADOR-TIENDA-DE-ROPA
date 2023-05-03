@@ -60,7 +60,7 @@ do {
 
             valorSeleccionado = nombreSeleccionado;
 
-            prendasFiltradas = productos.filter(prenda => prenda.nombre.toLowerCase().includes(nombreSeleccionado.toLowerCase()))
+            prendasFiltradas = productos.filter(prenda => prenda.nombre.includes(nombreSeleccionado));
 
             break;
 
@@ -124,7 +124,7 @@ do {
 
         let seleccion = prompt(`¿Qué prenda con ${filtro} ${valorSeleccionado} desea comprar? Las opciones son:\n- ${opcionesPrendas.join("\n- ")}`).toLowerCase();
         while (!opcionesPrendas.includes(seleccion)) {
-            seleccion = prompt(`Opción inválida, por favor ingrese una válida:\n- ${opcionesPrendas.join("\n- ")} `);
+            seleccion = prompt(`Opción inválida, por favor ingrese una válida:\n- ${opcionesPrendas.join("\n- ")} `).toLowerCase();
         }
         
         // Luego de que el usuario seleccione una prenda se busca la prenda seleccionada en "prendasFiltradas" y esta se almacena en una variable "prendaSeleccionada"
